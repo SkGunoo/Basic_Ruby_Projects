@@ -41,8 +41,7 @@
     is_lowercase = false
 
     is_lowercase = true if lowercase.include?(letter) 
-
-    
+  
     letter_code = letter.downcase.ord
     shifted_value = letter_code + shift_value
 
@@ -65,15 +64,24 @@
       end
     end
 
-    # z = 122 
-    # a = 97
-
   end
 
   def caesar_cipher(phrase, shift_value)
+    if check_incorrect_parameter(phrase,shift_value)
+      #turn phrase into an array
 
+      puts phrase.chars.map { |letter| right_shift_letter(letter,shift_value)}.join
+
+    else
+      puts "Incorrect Parameter, make sure to put write parameter"
+    
+    end
    
-
   end
 
-  
+  test_phrase = "
+
+    In cryptography, a Caesar cipher, also known as Caesar’s cipher, the shift cipher, Caesar’s code or Caesar shift, is one of the simplest and most widely known encryption techniques. It is a type of substitution cipher in which each letter in the plaintext is replaced by a letter some fixed number of positions down the alphabet. For example, with a left shift of 3, D would be replaced by A, E would become B, and so on. The method is named after Julius Caesar, who used it in his private correspondence.
+"
+
+  caesar_cipher(test_phrase,5)
