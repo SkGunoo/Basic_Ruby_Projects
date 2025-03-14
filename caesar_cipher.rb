@@ -22,10 +22,11 @@
 
   #return the ciphered string
 
-  def check_incorrect_parameter(phrase, shift_value)
-    return  false if  phrase.class != String || phrase.empty? 
-    return  false if shift_value != Numeric|| shift_value < 0 || shift_value.class == Float || shift_value.empty?
+  def check_incorrect_parameter(phrase, shift_value = 0)
 
+    return false if !phrase.is_a?(String) || phrase.empty? || !shift_value.is_a?(Integer) || shift_value < 0 || shift_value.is_a?(Float)
+
+    return true
   end
 
   def right_shift_letter(letter,shift_value)
@@ -63,20 +64,16 @@
         return shifted_value.chr.upcase
       end
     end
-  
-
-    
 
     # z = 122 
     # a = 97
-
 
   end
 
   def caesar_cipher(phrase, shift_value)
 
-  end
+   
 
-  
+  end
 
   
