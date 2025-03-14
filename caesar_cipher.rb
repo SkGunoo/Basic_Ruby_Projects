@@ -23,6 +23,9 @@
   #return the ciphered string
 
   def check_incorrect_parameter(phrase, shift_value)
+    return  false if  phrase.class != String || phrase.empty? 
+    return  false if shift_value != Numeric|| shift_value < 0 || shift_value.class == Float || shift_value.empty?
+
   end
 
   def rifght_shift_letter(letter)
@@ -30,3 +33,6 @@
 
   def caesar_cipher(phrase, shift_value)
   end
+
+
+  
