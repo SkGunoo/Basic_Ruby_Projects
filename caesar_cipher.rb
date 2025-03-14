@@ -22,4 +22,11 @@
 
   #return the ciphered string
 
-  
+  def check_incorrect_parameter(phrase, shift_value)
+  end
+
+  def rifght_shift_letter(letter)
+  end
+
+  def caesar_cipher(phrase, shift_value)
+  end
