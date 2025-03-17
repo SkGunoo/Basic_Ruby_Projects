@@ -27,6 +27,37 @@
 #return the first 2 element of that array 
 
 
+stock_prices = [17,3,6,9,15,8,6,1,10]
+
+def stock_picker(stock_prices)
+
+  best_buying_day = 0 
+  best_selling_day = 0 
+  maximum_profit = 0 
+  arr_size = stock_prices.size - 1
+
+  stock_prices.each_with_index do |stock_price, buying_day|
+
+    #excluding buying day and days before buying days 
+    (buying_day + 1..arr_size).each do |selling_day| 
+
+      profit = stock_prices[selling_day] - stock_prices[buying_day]
+
+      #check for the pair of days has highest profit
+      if profit > maximum_profit
+
+        maximum_profit = profit
+        best_buying_day = buying_day
+        best_selling_day = selling_day
+      end
+
+    end
+
+  end
+
+  return [best_buying_day,best_selling_day]
+
+end
 
 
-
+p stock_picker(stock_prices)
